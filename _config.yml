@@ -18,7 +18,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Egoridi portfolio
+title: EGORIDI's Awesome portfolio
+subtitle: "version 1.0, just did it ;)"
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -26,13 +27,19 @@ description: >- # this means to ignore newlines until "baseurl:"
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://EGORIDI.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+# twitter_username: jekyllrb
+github_username:  EGORIDI
+
+# no need for repo, I already set up origin
+# repository: "EGORIDI/EGORIDI"
 
 # Build settings
-theme: minima
+# theme: minima
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+
 plugins:
   - jekyll-feed
+  - jekyll-include-cache
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -53,3 +60,106 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+
+# Minimal mistakes configuration
+
+minimal_mistakes_skin: "dark" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
+locale: en-GB # "en-US", "en", "fr-FR", "it-IT", "pt-BR", es-ES
+
+head_scripts:
+  - https://code.jquery.com/jquery-3.2.1.min.js
+  - /assets/js/your-custom-head-script.js
+
+teaser: /assets/images/ricardo-gomez-angel--lYk9rDI2UU-unsplash.jpg
+# Photo by <a href="https://unsplash.com/@ripato?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ricardo Gomez Angel</a> on <a href="https://unsplash.com/s/photos/brown-leaves?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+# Photo by <a href="https://unsplash.com/@danfreemanphoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dan Freeman</a> on <a href="https://unsplash.com/s/photos/brown-leaves?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+# Photo by <a href="https://unsplash.com/@farbensammler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Peter Aschoff</a> on <a href="https://unsplash.com/s/photos/brown-leaves?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+# Photo by <a href="https://unsplash.com/@jakubkriz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jakub Kriz</a> on <a href="https://unsplash.com/s/photos/brown-leaves?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+# This is how to easely override the teaser standard image at anytime,
+# Just apply the following snippet to a document's YAML Front Matter
+# header:
+#   teaser: /assets/images/my-awesome-post-teaser.jpg
+
+# To insert a logo before the site title, place a graphic in the 
+# /assets/images/ directory and add the filename to _config.yml:
+# logo: "/assets/images/88x88.png"
+
+# By default your site title is used in the masthead. You can override this text 
+# by adding the following to your _config.yml:
+# masthead_title: "My Custom Title"
+
+
+# Enable post dates as a default
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      show_date: true
+# To disable post date for a post, add show_date: false to its YAML Front Matter, 
+# overriding what was set in _config.yml.
+
+# Instead of adding read_time: true to each post, apply as a default in _config.yml 
+# like so:
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      read_time: true
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+
+defaults:
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+
+defaults:
+  # _foo
+  - scope:
+      path: ""
+      type: foo
+    values:
+      layout: single
+
+
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: "your-disqus-shortname"
+
+search: true 
+
+author:
+  name     : "Egoridi"
+  avatar   : "/assets/images/47434302.jpg"
+  bio      : "My awesome biography constrained to a sentence or two goes here."
+  location : "Somewhere, Brazil"
+
+timezone: America/Sao_Paulo
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
